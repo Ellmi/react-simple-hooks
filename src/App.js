@@ -18,6 +18,7 @@ function App() {
                 }
             )
     }, [])
+
     if (!isLoaded) {
         return <div className="App">Loading...</div>;
     } else {
@@ -39,11 +40,11 @@ function App() {
                 <div>
                     <ul>
                         {items.map(item => (
-                            <li key={item.id}>
-                                {item.first_name} {item.last_name}
-                                {item.email}
+                            <div className="person" key={item.id}>
+                                <p className="name"> Name: {item.first_name} {item.last_name}</p>
+                                <p className="email"> Email: {item.email}</p>
                                 <img alt="avatar" src={item.avatar}/>
-                            </li>
+                            </div>
                         ))}
                     </ul>
                 </div>
