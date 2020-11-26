@@ -24,29 +24,27 @@ function App() {
     } else {
         return (
             <div className="App">
-                <div>
+                <div className="navigator">
                     <button onClick={() => {
                         if (page > 1) setPage(page - 1)
                     }}>
                         PREV
                     </button>
-                    <p>Current Page: {page}</p>
+                    <p>Current Page : {page}</p>
                     <button onClick={() => {
                         if (page < maxPage) setPage(page + 1)
                     }}>
                         NEXT
                     </button>
                 </div>
-                <div>
-                    <ul>
-                        {items.map(item => (
-                            <div className="person" key={item.id}>
-                                <p className="name"> Name: {item.first_name} {item.last_name}</p>
-                                <p className="email"> Email: {item.email}</p>
-                                <img alt="avatar" src={item.avatar}/>
-                            </div>
-                        ))}
-                    </ul>
+                <div className="persons">
+                    {items.map(item => (
+                        <div className="person" key={item.id}>
+                            <p className="name"> Name: {item.first_name} {item.last_name}</p>
+                            <p className="email"> Email: {item.email}</p>
+                            <img alt="avatar" src={item.avatar}/>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
