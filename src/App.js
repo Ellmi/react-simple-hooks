@@ -8,7 +8,7 @@ function App() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        fetch("https://reqres.in/api/users?page=1")
+        fetch("https://reqres.in/api/users?page=" + page)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -17,7 +17,7 @@ function App() {
                     setMaxPage(result.total_pages);
                 }
             )
-    }, [])
+    }, [page])
 
     if (!isLoaded) {
         return <div className="App">Loading...</div>;
